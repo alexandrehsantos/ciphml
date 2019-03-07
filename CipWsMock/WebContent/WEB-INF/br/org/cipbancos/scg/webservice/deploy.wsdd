@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SCGService WSDL service -->
+
+  <service name="controleGarantia" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.scg.cipbancos.org.br"/>
+      <parameter name="wsdlServiceElement" value="SCGService"/>
+      <parameter name="schemaQualified" value="http://webservice.scg.cipbancos.org.br,http://dto.webservice.scg.cipbancos.org.br"/>
+      <parameter name="wsdlServicePort" value="controleGarantia"/>
+      <parameter name="className" value="br.org.cipbancos.scg.webservice.SCGServiceSOAPSkeleton"/>
+      <parameter name="wsdlPortType" value="ControleGarantia"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="http://dto.webservice.scg.cipbancos.org.br"
+        qname="ns:SCGRequest"
+        type="java:br.org.cipbancos.scg.webservice.dto.SCGRequest"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://dto.webservice.scg.cipbancos.org.br"
+        qname="ns:SCGResponse"
+        type="java:br.org.cipbancos.scg.webservice.dto.SCGResponse"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

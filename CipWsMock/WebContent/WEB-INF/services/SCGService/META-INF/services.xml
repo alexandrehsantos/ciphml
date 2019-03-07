@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.5.2  Built on : Sep 06, 2010 (09:42:01 CEST) --><serviceGroup>
+    <service name="SCGService">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="br.org.cipbancos.scg.webservice.SCGServiceMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">br.org.cipbancos.scg.webservice.SCGServiceSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="retryByConfirmationOperation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://webservice.scg.cipbancos.org.br">
+            <actionMapping>http://webservice.scg.cipbancos.org.br/ControleGarantia/SCGRetryByConfirmation</actionMapping>
+            <outputActionMapping>http://webservice.scg.cipbancos.org.br/ControleGarantia/SCGResponse</outputActionMapping>
+        </operation>
+        <operation name="executeOperation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://webservice.scg.cipbancos.org.br">
+            <actionMapping>http://webservice.scg.cipbancos.org.br/ControleGarantia/SCGRequest</actionMapping>
+            <outputActionMapping>http://webservice.scg.cipbancos.org.br/ControleGarantia/SCGResponse</outputActionMapping>
+        </operation>
+        <operation name="retryByIdOperation" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://webservice.scg.cipbancos.org.br">
+            <actionMapping>http://webservice.scg.cipbancos.org.br/ControleGarantia/SCGRetryById</actionMapping>
+            <outputActionMapping>http://webservice.scg.cipbancos.org.br/ControleGarantia/SCGResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

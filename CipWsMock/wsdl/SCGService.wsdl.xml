@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SCGService" targetNamespace="http://webservice.scg.cipbancos.org.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.scg.cipbancos.org.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://dto.webservice.scg.cipbancos.org.br" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://dto.webservice.scg.cipbancos.org.br" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="SCGRequest">
+                <xsd:sequence>
+                    <xsd:element name="timeOut" type="xsd:int"/>
+                    <xsd:element name="request" type="xsd:hexBinary"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="SCGResponse">
+                <xsd:sequence>
+                    <xsd:element name="status" type="xsd:int"/>
+                    <xsd:element name="confirmation" type="xsd:string"/>
+                    <xsd:element name="response" type="xsd:hexBinary"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://webservice.scg.cipbancos.org.br">
+            <xsd:import namespace="http://dto.webservice.scg.cipbancos.org.br"/>
+            <xsd:element name="scgRequest" type="ns1:SCGRequest"/>
+            <xsd:element name="scgResponse" type="ns1:SCGResponse"/>
+            <xsd:element name="confirmation" type="xsd:string"/>
+            <xsd:element name="id" type="xsd:string"/>
+        </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SCGRetryByConfirmation">
+    <wsdl:part name="confirmation" element="tns:confirmation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SCGResponseMessage">
+    <wsdl:part name="scgResponse" element="tns:scgResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SCGRequestMessage">
+    <wsdl:part name="scgRequest" element="tns:scgRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SCGRetryById">
+    <wsdl:part name="id" element="tns:id">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ControleGarantia">
+    <wsdl:operation name="executeOperation">
+      <wsdl:input name="SCGRequest" message="tns:SCGRequestMessage">
+    </wsdl:input>
+      <wsdl:output name="SCGResponse" message="tns:SCGResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retryByConfirmationOperation">
+      <wsdl:input name="SCGRetryByConfirmation" message="tns:SCGRetryByConfirmation">
+    </wsdl:input>
+      <wsdl:output name="SCGResponse" message="tns:SCGResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retryByIdOperation">
+      <wsdl:input name="SCGRetryById" message="tns:SCGRetryById">
+    </wsdl:input>
+      <wsdl:output name="SCGResponse" message="tns:SCGResponseMessage">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SCGServiceSOAP" type="tns:ControleGarantia">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="executeOperation">
+      <soap:operation/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retryByConfirmationOperation">
+      <soap:operation/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retryByIdOperation">
+      <soap:operation/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SCGService">
+    <wsdl:port name="controleGarantia" binding="tns:SCGServiceSOAP">
+      <soap:address location="http://10.200.54.108:9080/webservice-scg/SCGService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

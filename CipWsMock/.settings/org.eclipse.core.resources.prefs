@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/classes/br/org/cipbancos/scg/webservice/ControleGarantia.java=UTF-8
+encoding//WebContent/WEB-INF/classes/br/org/cipbancos/scg/webservice/SCGService.java=UTF-8
+encoding//WebContent/WEB-INF/classes/br/org/cipbancos/scg/webservice/SCGServiceLocator.java=UTF-8
+encoding//WebContent/WEB-INF/classes/br/org/cipbancos/scg/webservice/SCGServiceSOAPImpl.java=UTF-8
+encoding//WebContent/WEB-INF/classes/br/org/cipbancos/scg/webservice/SCGServiceSOAPSkeleton.java=UTF-8
+encoding//WebContent/WEB-INF/classes/br/org/cipbancos/scg/webservice/SCGServiceSOAPStub.java=UTF-8
+encoding//WebContent/WEB-INF/classes/br/org/cipbancos/scg/webservice/dto/SCGRequest.java=UTF-8
+encoding//WebContent/WEB-INF/classes/br/org/cipbancos/scg/webservice/dto/SCGResponse.java=UTF-8
+encoding//src/br/org/cipbancos/scg/webservice/ControleGarantia.java=UTF-8
+encoding//src/br/org/cipbancos/scg/webservice/SCGService.java=UTF-8
+encoding//src/br/org/cipbancos/scg/webservice/SCGServiceLocator.java=UTF-8
+encoding//src/br/org/cipbancos/scg/webservice/SCGServiceSOAPImpl.java=UTF-8
+encoding//src/br/org/cipbancos/scg/webservice/SCGServiceSOAPSkeleton.java=UTF-8
+encoding//src/br/org/cipbancos/scg/webservice/SCGServiceSOAPStub.java=UTF-8
+encoding//src/br/org/cipbancos/scg/webservice/dto/SCGRequest.java=UTF-8
+encoding//src/br/org/cipbancos/scg/webservice/dto/SCGResponse.java=UTF-8
